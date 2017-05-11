@@ -1,0 +1,11 @@
+# npm stuff
+node_modules
+
+# osx stuff
+.DS_Store
+
+# distribution files
+dist/*
+
+# allow assets in dist
+!dist/assets/*

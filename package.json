@@ -1,0 +1,22 @@
+{
+  "name": "Water",
+  "title": "Front-End environment that just flows.",
+  "author": "Giovanni Martinez",
+  "url": "https://giologist.github.io/Water",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/giologist/water.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-sass": "^2.1.1",
+    "gulp-twig-up-to-date": "^0.6.0",
+    "gulp-uglify": "^1.5.1",
+    "jshint": "^2.8.0"
+  },
+  "dependencies": {}
+}

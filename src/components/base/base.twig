@@ -1,0 +1,40 @@
+{# layout.twig #}
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./assets/favicon.ico">
+    <title>Water</title>
+
+    <!-- Base CSS -->
+    <link href="./components/base/base.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    {% include "../header/header.twig" %}
+
+    {% block page %}{% endblock %}
+
+    <!-- Base JS -->
+    <script src="./components/base/base.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
