@@ -10,6 +10,7 @@
     "url": "http://github.com/giologist/water.git"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.11",
     "gulp": "^3.9.0",
     "gulp-jshint": "^2.0.0",
     "gulp-load-plugins": "^1.2.4",

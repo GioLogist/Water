@@ -17,18 +17,24 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('./src/**/*.scss')
         .pipe(plugins.sass())
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('dist/'))
+        .pipe(plugins.browserSync.stream());
 });
 
 // Minify JS
 gulp.task('scripts', function() {
     return gulp.src('./src/**/*.js')
         .pipe(plugins.uglify())
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('dist/'))
+        .pipe(plugins.browserSync.stream());
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
+    // Static gulp server
+    plugins.browserSync.init({
+        server: "./dist"
+    });
     gulp.watch('./src/**/*.js', ['lint', 'scripts']);
     gulp.watch('./src/**/*.scss', ['sass']);
     gulp.watch('./src/**/*.twig', ['twig']);
@@ -38,7 +44,8 @@ gulp.task('watch', function() {
 gulp.task('twig', function () {
     return gulp.src('./src/templates/index.twig')
         .pipe(plugins.twigUpToDate())
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/'))
+        .pipe(plugins.browserSync.stream());
 });
 
 // Default Task
