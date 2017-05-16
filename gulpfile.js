@@ -2,7 +2,9 @@
 var gulp = require('gulp');
 
 // Automatically load gulp plugins from package.json
-var plugins = require('gulp-load-plugins')();
+var  plugins = require('gulp-load-plugins')({
+        pattern: '*' // by default, it only loads plugins prefixed "gulp-"
+});
 
 // Detect JS Errors
 gulp.task('lint', function() {
