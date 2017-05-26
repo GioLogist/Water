@@ -1,6 +1,9 @@
 // Include gulp
 var gulp = require('gulp');
 
+// Run commands
+var exec = require('child_process').exec;
+
 // Automatically load gulp plugins from package.json
 var  plugins = require('gulp-load-plugins')({
         pattern: '*' // by default, it only loads plugins prefixed "gulp-"
