@@ -47,7 +47,7 @@ gulp.task('watch', function() {
 
 // Compile Twig Templates
 gulp.task('twig', function () {
-    return gulp.src('./src/templates/index.twig')
+    return gulp.src('./src/pages/**/*.twig')
         .pipe(plugins.twigUpToDate())
         .pipe(gulp.dest('./dist/'))
         .pipe(plugins.browserSync.stream());
