@@ -53,5 +53,12 @@ gulp.task('twig', function () {
         .pipe(plugins.browserSync.stream());
 });
 
+// Copy homepage over (pardon the hack)
+gulp.task('copy-home',['twig'], function () {
+    return gulp.src('./dist/index/index.html')
+      .pipe(gulp.dest('./dist/'))
+      .pipe(plugins.browserSync.stream());
+});
+
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig','copy-home']);
