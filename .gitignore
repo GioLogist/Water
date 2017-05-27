@@ -8,4 +8,4 @@ node_modules
 dist/*
 
 # allow assets in dist
-!dist/assets/*
+!dist/assets/favicon.ico
