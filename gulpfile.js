@@ -6,7 +6,8 @@ var exec = require('child_process').exec;
 
 // Automatically load gulp plugins from package.json
 var  plugins = require('gulp-load-plugins')({
-        pattern: '*' // by default, it only loads plugins prefixed "gulp-"
+        pattern: '*', // by default, it only loads plugins prefixed "gulp-"
+        rename: {'jshint': 'default-jshint'}, // a mapping of plugins to rename
 });
 
 // Detect JS Errors
