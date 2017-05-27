@@ -21,7 +21,8 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('./src/**/*.scss')
         .pipe(plugins.sass())
-        .pipe(gulp.dest('dist/'))
+        .pipe(plugins.concat('all.min.css'))
+        .pipe(gulp.dest('dist/assets/css'))
         .pipe(plugins.browserSync.stream());
 });
 
