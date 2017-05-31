@@ -97,6 +97,7 @@ gulp.task('styleguide-watch', function() {
     plugins.browserSync.init({
         server: "./dist"
     });
+    gulp.watch('./src/**/*', ['styleguide-build']);
     gulp.watch('./styleguide/**/*', ['styleguide-build']);
 });
 
