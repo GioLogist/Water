@@ -160,7 +160,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 // Layout and page background
 // ------------------------------------------------------------------------------
 
-#kss-node {
+.kss-node {
   margin: 0;
   padding: 20px;
   background: #fff;
@@ -218,7 +218,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 // Sidebar-area components
 // ------------------------------------------------------------------------------
 
-#kss-node {
+.kss-node {
 
   .kss-doc-title {
     margin: 0;
@@ -316,7 +316,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 // Content-area components
 // ------------------------------------------------------------------------------
 
-#kss-node {
+.kss-node {
 
   .kss-section {
     margin-bottom: ($kss-vertical-rhythm * 2);
