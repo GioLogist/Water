@@ -72,6 +72,12 @@ gulp.task('styleguide-build', function(cb) {
     cb(err);
     // reload after running command
     plugins.browserSync.reload();
+    // StyleGuide Builder CSS Assets
+    gulp.src(['./styleguide/custom-builder/kss-assets/*.scss'])
+        .pipe(plugins.sass())
+        .pipe(plugins.concat('kss.css'))
+        .pipe(gulp.dest('dist/styleguide/kss-assets'))
+        .pipe(plugins.browserSync.stream());
   });
 });
 
