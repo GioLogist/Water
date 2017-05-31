@@ -102,7 +102,7 @@ gulp.task('styleguide-watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig','copy-home']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig','copy-home','styleguide']);
 
 // Styleguide
 gulp.task('styleguide', ['styleguide-build', 'styleguide-watch']);
