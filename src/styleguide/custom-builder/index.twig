@@ -209,6 +209,7 @@
       {% endif %}
 
       {% if section.source.filename %}
+        {{ file_get_contents(section.source.path) }}
         <div class="kss-source kss-style">
           Source: <code>{{ section.source.filename }}</code>, line {{ section.source.line }}
         </div>
