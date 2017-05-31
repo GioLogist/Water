@@ -10,10 +10,11 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="kss-assets/components.min.css">
   <link rel="icon" href="/assets/favicon.ico">
   {{ styles|raw }}
 </head>
-<body id="kss-node" {% if template.isItem %}class="kss-fullscreen-mode"{% endif %}>
+<body id="kss-node" class="kss-node{% if template.isItem %} kss-fullscreen-mode"{% endif %}">
 
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
@@ -195,10 +196,11 @@
           {% endfor %}
         </div>
         {% if section.markup %}
+          {% include '../components/kss-embed/kss-embed.twig' %}
           <details class="kss-markup kss-style" open>
             <summary>
               {% if section.markupFile %}
-                Markup: <code>{{ section.markupFile }}</code>
+                HTML <!--<code>{{ section.markupFile }}</code>-->
               {% else %}
                 Markup
               {% endif %}
@@ -209,7 +211,6 @@
       {% endif %}
 
       {% if section.source.filename %}
-        {{ file_get_contents(section.source.path) }}
         <div class="kss-source kss-style">
           Source: <code>{{ section.source.filename }}</code>, line {{ section.source.line }}
         </div>
@@ -245,6 +246,10 @@
     detailsClass: 'kss-markup'
   });
 </script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="kss-assets/components.min.js"></script>
 {{ scripts|raw }}
 
 {# This will only be included in the demo page. #}
