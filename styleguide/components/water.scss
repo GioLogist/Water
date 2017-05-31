@@ -1,0 +1,28 @@
+.kss-node.water {
+  .kss-sidebar {
+    background: #f5f5f5;
+    box-shadow: none;
+  }
+  .kss-nav__menu-child li {
+    padding: 0;
+    line-height: 30px;
+    border: 0;
+  }
+  .kss-modifier__heading {
+    display: none;
+  }
+  .kss-toolbar {
+    display: none;
+  }
+  .kss-modifier__wrapper {
+    margin: 0 0 30px 0;
+    border: 0;
+    padding: 0;
+  }
+  .kss-section--depth-1  {
+    display: none;
+  }
+  .kss-title__ref {
+    display: none;
+  }
+}
