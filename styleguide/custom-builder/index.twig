@@ -197,6 +197,7 @@
         </div>
         {% if section.markup %}
           {% include '../components/kss-embed/kss-embed.twig' %}
+          {#-
           <details class="kss-markup kss-style" open>
             <summary>
               {% if section.markupFile %}
@@ -207,6 +208,7 @@
             </summary>
             <pre class="prettyprint linenums lang-html"><code data-language="html">{{ section.markup|escape('html') }}</code></pre>
           </details>
+        -#}
         {% endif %}
       {% endif %}
 
