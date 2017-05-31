@@ -66,7 +66,7 @@ gulp.task('styleguide-build', function(cb) {
   // Use CLI version, to avoid gulp-kss dependency
   var kss = 'node ' + __dirname + '/node_modules/kss/bin/kss ';
   // Execute kss command
-  exec(kss + 'src/ dist/styleguide/ --mask *.scss --css ../assets/css/all.min.css --markup true -b src/styleguide/custom-builder/ --placeholder class_name --title Water --extend src/styleguide/custom-builder/helpers', function (err, stdout, stderr) {
+  exec(kss + 'src/ dist/styleguide/ --mask *.scss --js ../assets/js/all.min.js --css ../assets/css/all.min.css --markup true -b styleguide/custom-builder/ --placeholder class_name --title Water --extend styleguide/custom-builder/helpers --homepage ../styleguide/homepage.md', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
