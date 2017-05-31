@@ -78,6 +78,18 @@ gulp.task('styleguide-build', function(cb) {
         .pipe(plugins.concat('kss.css'))
         .pipe(gulp.dest('dist/styleguide/kss-assets'))
         .pipe(plugins.browserSync.stream());
+    // StyleGuide Components JS assets
+    gulp.src(['./styleguide/components/**/*.js'])
+        .pipe(plugins.uglify())
+        .pipe(plugins.concat('components.min.js'))
+        .pipe(gulp.dest('dist/styleguide/kss-assets'))
+        .pipe(plugins.browserSync.stream());
+    // StyleGuide Components CSS Assets
+    gulp.src(['./styleguide/components/**/*.scss'])
+        .pipe(plugins.sass())
+        .pipe(plugins.concat('components.min.css'))
+        .pipe(gulp.dest('dist/styleguide/kss-assets/'))
+        .pipe(plugins.browserSync.stream());
   });
 });
 
