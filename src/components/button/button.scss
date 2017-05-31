@@ -1,17 +1,18 @@
 // Buttons
 //
-// Your standard button suitable for clicking.
+// Our primary button is our cta, only use one per component.
 //
-// :hover   - Highlights when hovering.
-// .shiny   - Do not press this big, shiny, red button.
+// .btn-primary  - &nbsp;
 //
 // Markup: button.twig
 //
 // Style guide: Components.buttons
 
-a.shiny {
-  color: red;
-}
-.btn:hover {
-  color: blue;
+.btn-primary {
+  background-color: #90cc03;
+  border-color: #90cc03;
+  &:hover {
+    background-color: #6ebe07;
+    border-color: #6ebe07;
+  }
 }
