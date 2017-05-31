@@ -60,5 +60,31 @@ gulp.task('copy-home',['twig'], function () {
       .pipe(plugins.browserSync.stream());
 });
 
+// Styleguide Builer
+gulp.task('styleguide-build', function(cb) {
+  // Use CLI version, to avoid gulp-kss dependency
+  var kss = 'node ' + __dirname + '/node_modules/kss/bin/kss ';
+  // Execute kss command
+  exec(kss + 'src/ dist/styleguide/ --mask *.scss --css ../assets/css/all.min.css --markup true -b src/styleguide/custom-builder/ --placeholder class_name --title Water', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+    // reload after running command
+    plugins.browserSync.reload();
+  });
+});
+
+// Styleguide Watcher
+gulp.task('styleguide-watch', function() {
+    // Static gulp server
+    plugins.browserSync.init({
+        server: "./dist"
+    });
+    gulp.watch('./src/**/*', ['styleguide-build']);
+});
+
 // Default Task
 gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig','copy-home']);
+
+// Styleguide
+gulp.task('styleguide', ['styleguide-build', 'styleguide-watch']);
