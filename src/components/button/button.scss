@@ -1,0 +1,17 @@
+// Buttons
+//
+// Your standard button suitable for clicking.
+//
+// :hover   - Highlights when hovering.
+// .shiny   - Do not press this big, shiny, red button.
+//
+// Markup: button.twig
+//
+// Style guide: Components.buttons
+
+a.shiny {
+  color: red;
+}
+.btn:hover {
+  color: blue;
+}
