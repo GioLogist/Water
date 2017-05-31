@@ -70,8 +70,6 @@ gulp.task('styleguide-build', function(cb) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
-    // reload after running command
-    plugins.browserSync.reload();
     // StyleGuide Builder CSS Assets
     gulp.src(['./styleguide/custom-builder/kss-assets/*.scss'])
         .pipe(plugins.sass())
@@ -99,7 +97,7 @@ gulp.task('styleguide-watch', function() {
     plugins.browserSync.init({
         server: "./dist"
     });
-    gulp.watch('./src/**/*', ['styleguide-build']);
+    gulp.watch('./styleguide/**/*', ['styleguide-build']);
 });
 
 // Default Task
