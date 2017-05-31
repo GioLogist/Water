@@ -12,7 +12,7 @@ var  plugins = require('gulp-load-plugins')({
 
 // Detect JS Errors
 gulp.task('lint', function() {
-    return gulp.src(['./src/**/*.js','!./src/styleguide/**/*.js'])
+    return gulp.src(['./src/**/*.js'])
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('default'));
 });
@@ -28,9 +28,10 @@ gulp.task('sass', function() {
 
 // Minify JS
 gulp.task('scripts', function() {
-    return gulp.src(['./src/**/*.js','!./src/styleguide/**/*.js'])
+    return gulp.src(['./src/**/*.js'])
         .pipe(plugins.uglify())
-        .pipe(gulp.dest('dist/'))
+        .pipe(plugins.concat('all.min.js'))
+        .pipe(gulp.dest('dist/assets/js'))
         .pipe(plugins.browserSync.stream());
 });
 
