@@ -1,6 +1,9 @@
 $(function() {
   // activate tabs
   $(".kss-embed").tabs({
+    active: 0
+  });
+  $(".kss-embed__inline").tabs({
     active: 1
   });
   // render html inside iframe
