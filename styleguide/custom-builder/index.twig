@@ -8,7 +8,6 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/components.min.css">
   <link rel="icon" href="/assets/favicon.ico">
@@ -166,42 +165,44 @@
       </div>
 
       {% if section.example %}
-        <div class="kss-modifier__wrapper">
-            <div class="kss-modifier__example-block">
-              <div class="kss-modifier__heading kss-style">
-                Example{% if section.modifiers is not empty %}s{% endif %}
-              </div>
-
-              {% if section.modifiers is not empty %}
-                <div class="kss-modifier__default-name kss-style">
-                  Default styling
+        {% if 'Atoms' in section.reference %}
+          <div class="kss-modifier__wrapper">
+              <div class="kss-modifier__example-block">
+                <div class="kss-modifier__heading kss-style">
+                  Example{% if section.modifiers is not empty %}s{% endif %}
                 </div>
-              {% endif %}
 
-              <div class="kss-modifier__example">
-                {{ section.example|raw }}
-                <div class="kss-modifier__example-footer"></div>
-              </div>
-          </div>
+                {% if section.modifiers is not empty %}
+                  <div class="kss-modifier__default-name kss-style">
+                    Default styling
+                  </div>
+                {% endif %}
 
-          {% for modifier in section.modifiers %}
-            <div class="kss-modifier__example-block">
-              <div class="kss-modifier__name kss-style">
-                {{ modifier.name }}
-              </div>
-              <div class="kss-modifier__description kss-style">
-                {{ modifier.description|raw }}
-              </div>
-              <div class="kss-modifier__example">
-                {{ modifier.markup|raw }}
-                <div class="kss-modifier__example-footer"></div>
-              </div>
+                <div class="kss-modifier__example">
+                  {{ section.example|raw }}
+                  <div class="kss-modifier__example-footer"></div>
+                </div>
             </div>
-          {% endfor %}
-        </div>
+
+            {% for modifier in section.modifiers %}
+              <div class="kss-modifier__example-block">
+                <div class="kss-modifier__name kss-style">
+                  {{ modifier.name }}
+                </div>
+                <div class="kss-modifier__description kss-style">
+                  {{ modifier.description|raw }}
+                </div>
+                <div class="kss-modifier__example">
+                  {{ modifier.markup|raw }}
+                  <div class="kss-modifier__example-footer"></div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
         {% if section.markup %}
           {% include '../components/kss-embed/kss-embed.twig' %}
-          {#-
+          {#- Legacy Markup
           <details class="kss-markup kss-style" open>
             <summary>
               {% if section.markupFile %}
