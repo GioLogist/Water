@@ -43,22 +43,16 @@ gulp.task('watch', function() {
     });
     gulp.watch('./src/**/*.js', ['lint', 'scripts']);
     gulp.watch('./src/**/*.scss', ['sass']);
-    gulp.watch('./src/**/*.twig', ['twig','copy-home']);
+    gulp.watch('./src/**/*.twig', ['twig']);
 });
 
 // Compile Twig Templates
 gulp.task('twig', function () {
     return gulp.src('./src/pages/**/*.twig')
         .pipe(plugins.twigUpToDate())
+        .pipe(plugins.rename({dirname: ''}))
         .pipe(gulp.dest('./dist/'))
         .pipe(plugins.browserSync.stream());
-});
-
-// Copy homepage over (pardon the hack)
-gulp.task('copy-home',['twig'], function () {
-    return gulp.src('./dist/index/index.html')
-      .pipe(gulp.dest('./dist/'))
-      .pipe(plugins.browserSync.stream());
 });
 
 // Styleguide Builer
