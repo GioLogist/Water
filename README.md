@@ -37,5 +37,6 @@ Note: Running **gulp** alone, performs all of the above.
 ## Installation
 ```sh
 git clone git@github.com:giologist/Water
+npm install
 gulp
 ```
