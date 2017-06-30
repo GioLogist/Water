@@ -1,9 +1,13 @@
+{% set js = file_get_contents(section.source.path|replace({'.scss':'.js'})) %}
+
 <div class="kss-embed{% if 'Atoms' in section.reference %} kss-embed__inline{% endif %}">
   <ul>
     <li><a href="#tabs-1">Result</a></li>
     <li><a href="#tabs-2">HTML</a></li>
     <li><a href="#tabs-3">CSS</a></li>
-    <li><a href="#tabs-4">JS</a></li>
+    {% if js %}
+      <li><a href="#tabs-4">JS</a></li>
+    {% endif %}
   </ul>
   <div id="tabs-1" class="kss-embed__html">
     <iframe class="kss-embed__html-iframe"></iframe>
@@ -18,7 +22,9 @@
     <pre class="prettyprint linenums lang-css"><code data-language="css">{{file_get_contents(section.source.path)}}
 </code></pre>
   </div>
-  <div id="tabs-4" class="kss-embed__prettyprint">
-    <pre class="prettyprint linenums lang-js"><code data-language="js">// JS Here</code></pre>
-  </div>
+  {% if js %}
+    <div id="tabs-4" class="kss-embed__prettyprint">
+      <pre class="prettyprint linenums lang-js"><code data-language="js">{{ js }}</code></pre>
+    </div>
+  {% endif %}
 </div>
