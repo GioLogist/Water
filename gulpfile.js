@@ -43,7 +43,7 @@ gulp.task('watch', function() {
     });
     gulp.watch('./src/**/*.js', ['lint', 'scripts']);
     gulp.watch('./src/**/*.scss', ['sass']);
-    gulp.watch('./src/**/*.twig', ['twig']);
+    gulp.watch('./src/**/*.twig', ['twig','copy-home']);
 });
 
 // Compile Twig Templates
@@ -102,7 +102,7 @@ gulp.task('styleguide-watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig','copy-home','styleguide']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch','twig','styleguide']);
 
 // Styleguide
 gulp.task('styleguide', ['styleguide-build', 'styleguide-watch']);
